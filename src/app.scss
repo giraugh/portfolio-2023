@@ -1,0 +1,69 @@
+:root {
+  --col-background: #FEF1E6;
+  --col-surface-white: #fefefe;
+  --col-surface-green: #69DBB2;
+  --col-surface-green-d: #45B88E;
+
+  --col-stevent-brand: #4000d0;
+  --col-automatarium-brand: #FFA800;
+  --col-automatarium-grid-dot: #DDDDDD;
+  --col-automatarium-border: #C4C4C4;
+
+  --col-text-white: #eee;
+  --col-text-black: #2A2A2A;
+
+  --rad-button: .2rem;
+  --rad-image: 1.5rem;
+
+  --fnt-heading: "Jost", sans-serif;
+  --fnt-body: "Inter", sans-serif;
+
+  --automatarium-dot-fraction: 12.5%;
+  --grad-automatarium-dot-grid: radial-gradient(
+    var(--col-automatarium-grid-dot),
+    var(--col-automatarium-grid-dot) var(--automatarium-dot-fraction),
+    var(--col-surface-white) var(--automatarium-dot-fraction));
+}
+
+body {
+  margin: 0;
+  background: var(--col-background);
+  min-height: 100vh;
+  font-family: var(--fnt-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fnt-heading);
+  margin-block-start: 0;
+}
+
+/* Styles */
+
+button, a.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5em;
+
+  background: var(--col-surface);
+  border: none;
+  color: inherit;
+  text-decoration: none;
+  padding: .5em 1em;
+  font-size: 1.1em;
+  border-radius: var(--rad-button);
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--fnt-heading);
+}
+
+section.primary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block-end: 1em;
+
+	.content {
+		max-width: 1000px;
+	}
+}
