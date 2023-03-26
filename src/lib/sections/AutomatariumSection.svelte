@@ -1,11 +1,11 @@
 <script lang="ts">
-	import TextAndScreenshot from '$lib/components/TextAndScreenshot.svelte'
+	import BigProjectSection from '$lib/components/BigProjectSection.svelte'
 	import automatariumBannerImage from '$lib/images/automatarium-banner.svg'
 	import automatariumScreenshotImage from '$lib/images/automatarium-graph.svg' // TODO: cdn
 </script>
 
 <section class="primary">
-	<TextAndScreenshot>
+	<BigProjectSection>
 		<img slot="title" src={automatariumBannerImage} alt="Automatarium logo and wordmark" />
 		<div slot="description">
 			<p>
@@ -19,7 +19,7 @@
 			</p>
 		</div>
 		<img slot="image" src={automatariumScreenshotImage} alt="Screenshot of the stevent software" />
-	</TextAndScreenshot>
+	</BigProjectSection>
 </section>
 
 <style lang="scss">
@@ -44,6 +44,6 @@
 	}
 
 	img[slot='image'] {
-		object-fit: contain;
+		object-fit: contain !important;
 	}
 </style>

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import TextAndScreenshot from '$lib/components/TextAndScreenshot.svelte'
+	import BigProjectSection from '$lib/components/BigProjectSection.svelte'
 	import steventBannerImage from '$lib/images/stevent-banner.svg'
 </script>
 
 <section class="primary">
-	<TextAndScreenshot>
+	<BigProjectSection>
 		<img slot="title" src={steventBannerImage} alt="Stevent logo and wordmark" />
 		<div slot="description">
 			<p>
@@ -26,7 +26,7 @@
 			src="https://cdn.giraugh.xyz/compressed/stevent-screenshot.webp"
 			alt="Screenshot of the stevent software"
 		/>
-	</TextAndScreenshot>
+	</BigProjectSection>
 </section>
 
 <style lang="scss">

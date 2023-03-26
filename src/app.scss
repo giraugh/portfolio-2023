@@ -1,23 +1,43 @@
 :root {
+  /* Generic */
   --col-background: #FEF1E6;
   --col-surface-white: #fefefe;
   --col-surface-green: #69DBB2;
-  --col-surface-green-d: #45B88E;
-
-  --col-stevent-brand: #4000d0;
-  --col-automatarium-brand: #FFA800;
-  --col-automatarium-grid-dot: #DDDDDD;
-  --col-automatarium-border: #C4C4C4;
-
+  --col-surface-green-d: #3cae82;
+  --col-surface-blue: #4088CA;
+  --col-surface-blue-d: #3464b1;
+  --col-surface-purple: #725dbf;
+  --col-surface-purple-d: #4f3585; // Purple
+  --col-surface-purple-dd: #3B236F; // Dark Purple
+  --col-surface-purple-ddd: #2F1A5A; // Deep purple B)
+  --col-surface-purple-dddd: #241347; // Deepst purple
   --col-text-white: #eee;
   --col-text-black: #2A2A2A;
-
   --rad-button: .2rem;
   --rad-image: 1.5rem;
-
   --fnt-heading: "Jost", sans-serif;
   --fnt-body: "Inter", sans-serif;
 
+  /* Stevent */
+
+  --col-stevent-brand: #4000d0;
+
+  /* Gallery */
+
+  --grad-gallery: linear-gradient(to bottom, var(--col-surface-blue), var(--col-surface-blue-d));
+
+  /* Solar and Sundry */
+  --grad-sas: linear-gradient(45deg,
+    rgba(94, 54, 176, 1),
+    rgba(84, 53, 108, 1),
+    rgba(75, 51, 119, 1),
+    rgba(44, 41, 157, 1)
+  );
+
+  /* Automatarium */
+  --col-automatarium-brand: #FFA800;
+  --col-automatarium-grid-dot: #DDDDDD;
+  --col-automatarium-border: #C4C4C4;
   --automatarium-dot-fraction: 12.5%;
   --grad-automatarium-dot-grid: radial-gradient(
     var(--col-automatarium-grid-dot),
@@ -44,6 +64,7 @@ button, a.button {
   justify-content: center;
   align-items: center;
   gap: .5em;
+  width: max-content;
 
   background: var(--col-surface);
   border: none;
@@ -61,9 +82,14 @@ section.primary {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-block-end: 1em;
+  
+  &:not(.bg-image) {
+    padding-block-end: 1em;
+  }
 
 	.content {
 		max-width: 1000px;
+    padding-block: 2em;
+    padding-inline: 2em;
 	}
 }

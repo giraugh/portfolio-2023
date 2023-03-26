@@ -1,7 +1,8 @@
 <script lang="ts">
+	export let swap = false
 </script>
 
-<div class="text-and-screenshot content">
+<div class="project content" class:swap>
 	<div class="title"><slot name="title" /></div>
 	<div class="description"><slot name="description" /></div>
 	<div class="image"><slot name="image" /></div>
@@ -10,7 +11,7 @@
 <style lang="scss">
 	@import '$lib/styles/breakpoints.scss';
 
-	.text-and-screenshot {
+	.project {
 		display: grid;
 		grid-template-columns: 2fr 3fr;
 		grid-template-areas:
@@ -19,8 +20,18 @@
 		column-gap: 3em;
 		align-items: center;
 
-		padding-block: 3em;
-		padding-inline: 2em;
+		& {
+			padding-block: 3em !important;
+		}
+
+		@media (min-width: $bp-mobile) {
+			&.swap {
+				grid-template-columns: 3fr 2fr;
+				grid-template-areas:
+					'image title'
+					'image description';
+			}
+		}
 
 		@media (max-width: $bp-mobile) {
 			grid-template-columns: 1fr;
@@ -35,17 +46,29 @@
 
 	.title {
 		grid-area: title;
+		align-self: end;
+
+		:global(h2) {
+			margin-block-end: 0;
+		}
 
 		:global(img) {
 			display: block;
 			width: 100%;
 			height: 100%;
-			object-fit: cover;
+			object-fit: contain;
+			max-height: 6em;
+			object-position: left;
+
+			@media (max-width: $bp-mobile) {
+				object-position: center;
+			}
 		}
 	}
 
 	.description {
 		grid-area: description;
+		align-self: start;
 	}
 
 	.image {
@@ -58,6 +81,10 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+
+			@media (max-width: $bp-mobile) {
+				max-height: 18em;
+			}
 		}
 	}
 </style>

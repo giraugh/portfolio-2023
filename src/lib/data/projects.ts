@@ -1,0 +1,171 @@
+type Project = {
+  name: string
+  description: string
+  image: string
+  link: string
+  dark: boolean
+}
+
+export default [
+  {
+    name: 'Solar and Sundry',
+    description: 'Painterly sci-fi webcomic',
+    image: 'https://imagedelivery.net/zthi1l8fKrUGB5ig08mq-Q/4b15df30-85c7-429e-d062-bf1d19f0fd00/public',
+    link: 'https://sas.ewanb.me',
+    dark: true,
+  },
+  {
+    name: 'Pasta of the day',
+    description: 'One stop spot for all your pasta needs',
+    image: 'https://cdn.giraugh.xyz/Pasta-of-the-Day.png',
+    link: 'https://pasta.ewanb.me',
+    dark: true,
+  },
+  {
+    name: 'Fractal Crab',
+    description: 'Simple web-based fractal explorer created using WASM',
+    image: 'https://cdn.giraugh.xyz/Fractal-Crab.png',
+    link: 'https://ewanb.me/fractal-crab',
+    dark: true,
+  },
+  {
+    name: 'Flow Field Fun',
+    description: 'Cool little visualiser for particle physics in a flow field',
+    image: 'https://cdn.giraugh.xyz/Flow-Field-Fun.png',
+    link: 'https://ewanb.me/flow-field-fun',
+    dark: true,
+  },
+  {
+    name: 'Duckboi',
+    description: 'Pico-8 game about protecting your ducks from monsters',
+    image: 'https://cdn.giraugh.xyz/duckboi.png',
+    link: 'https://ewanb.me/duckboi',
+    dark: false,
+  },
+  {
+    name: 'Diffusion Snowflakes',
+    description: 'Generation of snowflakes using diffusion-limited aggregation',
+    image: 'https://cdn.giraugh.xyz/diffusion-snowflakes.png',
+    link: 'https://ewanb.me/diffusion-snowflakes',
+    dark: true,
+  },
+  {
+    name: 'Hue Map',
+    description: 'Tool for interpolating gradients using common palettes',
+    image: 'https://cdn.giraugh.xyz/hue-map-sample.png',
+    link: 'https://ewanb.me/hue-map',
+    dark: true,
+  },
+  {
+    name: 'Ant',
+    description: 'Simple langton\'s ant simulation',
+    image: 'https://cdn.giraugh.xyz/ant.png',
+    link: 'https://ewanb.me/ant',
+    dark: true,
+  },
+  {
+    name: 'Squish',
+    description: 'Platforming party game that pits players "head" to "head".',
+    image: 'https://cdn.giraugh.xyz/compressed/squish.avif',
+    link: 'http://ewanb.me/squish',
+    dark: false,
+  },
+  {
+    name: 'Galana',
+    description: 'Brutal minimalist scrolling shooter for android devices.',
+    image: 'https://cdn.giraugh.xyz/compressed/galana.avif',
+    link: 'https://tdos.itch.io/galana',
+    dark: false,
+  },
+  {
+    name: 'Clink',
+    description: '8-bit adventure game made in PICO-8.',
+    image: 'https://cdn.giraugh.xyz/compressed/clink.webp',
+    link: 'http://ewanb.me/clink',
+    dark: false,
+  },
+  {
+    name: 'Fish Boy',
+    description: 'Endless platforming game made for Ludum Dare 39.',
+    image: 'https://cdn.giraugh.xyz/compressed/fish.webp',
+    link: 'https://tdos.itch.io/fishy',
+    dark: false,
+  },
+  {
+    name: 'Pacmascii',
+    description: 'Pacman but ASCII',
+    image: 'https://cdn.giraugh.xyz/compressed/pacmascii.webp',
+    link: 'https://ewanb.me/Pacmascii',
+    dark: true,
+  },
+  {
+    name: 'Spades',
+    description: 'Space dogfighting game made in Unity',
+    image: 'https://cdn.giraugh.xyz/compressed/spades.webp',
+    link: 'https://tdos.itch.io/spades',
+    dark: true,
+  },
+  {
+    name: 'Shaders',
+    description: 'My collection of Raymarched 3D Shaders.',
+    image: 'https://cdn.giraugh.xyz/compressed/shaders-short-shot.webp',
+    link: 'https://shadertoy.com/user/giraugh',
+    dark: false,
+  },
+  {
+    name: 'Knight Game',
+    description: 'Platforming MOBA made in GameMaker Studio.',
+    image: 'https://cdn.giraugh.xyz/compressed/knight.webp',
+    link: 'https://tdos.itch.io/knight-game',
+    dark: false,
+  },
+  {
+    name: 'Growing Up',
+    description: 'Gardening rhythm game made for Ludum Dare 47.',
+    image: 'https://cdn.giraugh.xyz/compressed/growing-up.webp',
+    link: 'https://growingup.avrami.me/',
+    dark: false,
+  },
+  {
+    name: 'ASCII Marcher',
+    description: 'Animated 3D Scene rendered in ASCII',
+    image: 'https://cdn.giraugh.xyz/compressed/ASCII-Marcher.webp',
+    link: 'https://ewanb.me/ASCII-Marcher',
+    dark: true,
+  },
+  {
+    name: 'Crab Fitter',
+    description: 'Crab fit: the game',
+    image: 'https://cdn.giraugh.xyz/compressed/crab-fitter.webp',
+    link: 'https://ewanb.me/crab-fitter',
+    dark: true,
+  },
+  {
+    name: 'Binary Search Bot',
+    description: 'This robot will guess your age',
+    image: 'https://cdn.giraugh.xyz/compressed/AA-GFOD-BS.webp',
+    link: 'https://ewanb.me/AA-GFOD-BS',
+    dark: false,
+  },
+  {
+    name: 'Honey Heist',
+    description: 'Online Character viewer for the open source Honey Heist RPG.',
+    image: 'https://cdn.giraugh.xyz/compressed/honey-heist-shot.webp',
+    link: 'http://ewanb.me/honey-heist',
+    dark: false,
+  },
+  {
+    name: 'Critical Counter',
+    description: 'Discord bot for counting stats in a DnD Campaign.',
+    image: 'https://cdn.giraugh.xyz/compressed/critical-counter-shot.webp',
+    link: 'http://github.com/giraugh/critical-counter',
+    dark: false,
+  },
+  {
+    name: 'Hex Redux',
+    description: 'Online tool for creating javascript bots that play Hex.',
+    image: 'https://cdn.giraugh.xyz/compressed/hex-redux-zoom-shot.webp',
+    link: 'http://ewanb.me/hex-redux',
+    dark: false,
+  },
+] as readonly Project[]
