@@ -1,30 +1,38 @@
-<script>
+<script lang="ts">
 	import SimpleSection from '$lib/components/SimpleSection.svelte'
 	import Spikes from '$lib/components/Spikes.svelte'
 	import projects from '$lib/data/projects'
+
+	let scroll: number
 </script>
 
 <section class="primary">
 	<div class="spikes-container">
-		<Spikes
-			simplexFreq={0.5}
-			spikeResolution={1500 / 90}
-			spikeHeight={2000}
-			spikeBaseHeight={1}
-			fill="var(--col-surface-purple-ddd)"
-		/>
-		<Spikes
-			spikeResolution={1500 / 70}
-			spikeHeight={400}
-			spikeBaseHeight={320}
-			fill={'var(--col-surface-purple-dd)'}
-		/>
-		<Spikes
-			spikeResolution={1500 / 70}
-			spikeHeight={400}
-			spikeBaseHeight={270}
-			fill={'var(--col-surface-purple-d)'}
-		/>
+		<div class="spike-container bottom" style:--oy={(scroll - 500) / 10}>
+			<Spikes
+				simplexFreq={0.5}
+				spikeResolution={1500 / 90}
+				spikeHeight={2000}
+				spikeBaseHeight={1}
+				fill="var(--col-surface-purple-ddd)"
+			/>
+		</div>
+		<div class="spike-container mid" style:--oy={(scroll - 2000) / 8}>
+			<Spikes
+				spikeResolution={1500 / 70}
+				spikeHeight={400}
+				spikeBaseHeight={320}
+				fill={'var(--col-surface-purple-dd)'}
+			/>
+		</div>
+		<div class="spike-container top">
+			<Spikes
+				spikeResolution={1500 / 70}
+				spikeHeight={400}
+				spikeBaseHeight={270}
+				fill={'var(--col-surface-purple-d)'}
+			/>
+		</div>
 	</div>
 	<SimpleSection title="Other Projects">
 		<div slot="description">
@@ -51,6 +59,7 @@
 		{/each}
 	</ul>
 </section>
+<svelte:window bind:scrollY={scroll} />
 
 <style lang="scss">
 	section {
@@ -76,11 +85,16 @@
 	.spikes-container {
 		position: absolute;
 		inset: 0;
+		overflow: hidden;
 
 		> :global(*) {
 			position: absolute;
 			inset: 0;
 		}
+	}
+
+	.spike-container {
+		transform: translateY(calc(var(--oy) * 1px));
 	}
 
 	.project-card {

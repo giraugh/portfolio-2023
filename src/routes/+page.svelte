@@ -4,7 +4,7 @@
 	import AutomatariumSection from '$lib/sections/AutomatariumSection.svelte'
 	import GallerySection from '$lib/sections/GallerySection.svelte'
 	import SolarAndSundrySection from '$lib/sections/SolarAndSundrySection.svelte'
-	import OtherProjects from '$lib/sections/OtherProjects.svelte'
+	import OtherProjectsSection from '$lib/sections/OtherProjectsSection.svelte'
 </script>
 
 <IntroSection />
@@ -12,7 +12,7 @@
 <GallerySection />
 <SolarAndSundrySection />
 <AutomatariumSection />
-<OtherProjects />
+<OtherProjectsSection />
 
 <svelte:head>
 	<title>Ewan Breakey</title>
