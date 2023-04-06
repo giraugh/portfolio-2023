@@ -2,8 +2,9 @@
 	import SimpleSection from '$lib/components/SimpleSection.svelte'
 	import Spikes from '$lib/components/Spikes.svelte'
 	import projects from '$lib/data/projects'
+	import { fly } from 'svelte/transition'
 
-	let scroll: number
+	let scroll: number = 0
 </script>
 
 <section class="primary">
@@ -38,13 +39,13 @@
 		<div slot="description">
 			<p>
 				A collection of various projects ranging from the start of my career to today. Featuring
-				data visualisations, video games, webcomics, npm libraries and more.
+				data visualisations, video games, webcomics, libraries and more.
 			</p>
 		</div>
 	</SimpleSection>
 	<ul class="project-list content">
 		{#each projects as project}
-			<li>
+			<li transition:fly={{ duration: 200 }}>
 				<a
 					class="project-card"
 					href={project.link}

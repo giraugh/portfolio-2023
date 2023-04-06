@@ -16,6 +16,6 @@
 	}
 
 	main {
-		width: min(100vw, 1600px);
+		width: min(100vw, 100em);
 	}
 </style>

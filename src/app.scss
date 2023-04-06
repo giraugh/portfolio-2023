@@ -6,11 +6,6 @@
   --col-surface-green-d: #3cae82;
   --col-surface-blue: #4088CA;
   --col-surface-blue-d: #3464b1;
-  --col-surface-purple: #725dbf;
-  --col-surface-purple-d: #4f3585; // Purple
-  --col-surface-purple-dd: #3B236F; // Dark Purple
-  --col-surface-purple-ddd: #2F1A5A; // Deep purple B)
-  --col-surface-purple-dddd: #241347; // Deepst purple
   --col-text-white: #eee;
   --col-text-black: #2A2A2A;
   --rad-button: .2rem;
@@ -43,6 +38,19 @@
     var(--col-automatarium-grid-dot),
     var(--col-automatarium-grid-dot) var(--automatarium-dot-fraction),
     var(--col-surface-white) var(--automatarium-dot-fraction));
+
+  /* Cave */
+  --col-surface-purple: #725dbf;
+  --col-surface-purple-d: #4f3585; // Purple
+  --col-surface-purple-dd: #3B236F; // Dark Purple
+  --col-surface-purple-ddd: #2F1A5A; // Deep purple B)
+  --col-surface-purple-dddd: #241347; // Deepst purple
+  
+  /* Beach */
+  --col-surface-sand: #FDE89F;
+  --col-surface-wave: rgba(99, 198, 229, 1);
+  --col-surface-wave-d: rgba(72, 154, 180, 1);
+  --grad-wave: linear-gradient(to bottom, var(--col-surface-wave), var(--col-surface-wave-d));
 }
 
 body {
@@ -88,8 +96,14 @@ section.primary {
   }
 
 	.content {
-		max-width: 1000px;
+		max-width: 63em;
     padding-block: 2em;
     padding-inline: 2em;
 	}
+}
+
+@media (min-width: 1650px) {
+  body {
+    font-size: 1.3rem;
+  }
 }
