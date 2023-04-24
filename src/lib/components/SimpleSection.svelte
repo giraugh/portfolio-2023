@@ -1,9 +1,10 @@
 <script lang="ts">
 	export let title: string
+	export let thin: boolean = false
 </script>
 
 <div class="simple content">
-	<div class="description">
+	<div class="description" class:thin>
 		<h2>{title}</h2>
 		<slot name="description" />
 	</div>
@@ -39,6 +40,11 @@
 			:global(a.button) {
 				margin-block-end: 2em;
 			}
+		}
+
+		&.thin {
+			max-width: 100%;
+			padding-block: 1em;
 		}
 	}
 

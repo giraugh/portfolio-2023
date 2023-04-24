@@ -6,6 +6,7 @@
 	import SolarAndSundrySection from '$lib/sections/SolarAndSundrySection.svelte'
 	import OtherProjectsSection from '$lib/sections/OtherProjectsSection.svelte'
 	import BeachSection from '$lib/sections/BeachSection.svelte'
+	import FooterSection from '$lib/sections/FooterSection.svelte'
 </script>
 
 <IntroSection />
@@ -15,6 +16,7 @@
 <AutomatariumSection />
 <OtherProjectsSection />
 <BeachSection />
+<FooterSection />
 
 <svelte:head>
 	<title>Ewan Breakey</title>

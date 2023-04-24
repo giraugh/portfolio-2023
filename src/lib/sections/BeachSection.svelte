@@ -97,6 +97,7 @@
 		min-height: 20em;
 		width: 100%;
 		margin-block-start: 14em;
+		padding-block-end: 20em;
 
 		background: var(--col-surface-sand);
 
@@ -146,6 +147,7 @@
 
 	.project-list {
 		padding-block-start: 10em;
+		padding-inline: 0;
 		list-style-type: none;
 		width: 100%;
 		box-sizing: border-box;
@@ -217,5 +219,9 @@
 			radial-gradient(111.8px at 50% -100px, #0000 99%, #000 101%) 50% 50px/200px 100% repeat-x;
 		-webkit-mask: var(--mask);
 		mask: var(--mask);
+	}
+
+	.primary {
+		overflow-x: hidden;
 	}
 </style>
