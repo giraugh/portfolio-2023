@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SimpleSection from '$lib/components/SimpleSection.svelte'
 	import Spikes from '$lib/components/Spikes.svelte'
-	import projects from '$lib/data/projects'
+	import projects, { makeImageLink } from '$lib/data/projects'
 	import { fly } from 'svelte/transition'
 
 	let scroll: number = 0
@@ -49,7 +49,7 @@
 				<a
 					class="project-card"
 					href={project.link}
-					style:background-image={`url(${project.image})`}
+					style:background-image={`url(${makeImageLink(project.imageID)})`}
 				>
 					<div class="card-content" class:dark={project.dark}>
 						<span class="card-title">{project.name}</span>

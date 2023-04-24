@@ -1,5 +1,7 @@
 <script lang="ts">
 	import crabImage from '$lib/images/crab.png'
+	import projects from '$lib/data/friendsProjects'
+	import { makeImageLink } from '$lib/data/projects'
 </script>
 
 <section class="primary">
@@ -13,6 +15,26 @@
 		<div class="crab-wrapper">
 			<img class="crab" src={crabImage} alt="A cute cartoon crab" />
 		</div>
+		<ul class="project-list content">
+			{#each projects as project}
+				<li>
+					<a
+						class="project-card"
+						href={project.link}
+						style:background-image={`url(${makeImageLink(project.imageID)})`}
+					>
+						<div class="card-content" class:dark={project.dark}>
+							<span class="card-title">{project.name}</span>
+							<p>
+								{project.description}
+								<a class="card-author" href={project.authorLink} target="_blank">{project.author}</a
+								>
+							</p>
+						</div>
+					</a>
+				</li>
+			{/each}
+		</ul>
 	</div>
 </section>
 
@@ -75,8 +97,8 @@
 
 	.crab-wrapper {
 		width: 100%;
-		height: 30em;
-		position: relative;
+		height: 25em;
+		position: absolute;
 
 		img {
 			display: block;
@@ -99,6 +121,73 @@
 			top: 2.5em;
 			left: 3em;
 		}
+	}
+
+	.project-list {
+		padding-block-start: 10em;
+		list-style-type: none;
+		width: 100%;
+		box-sizing: border-box;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		width: 100%;
+		gap: 1em;
+	}
+
+	.project-card {
+		display: block;
+		/* background-color: purple; */
+		background-size: cover;
+		background-position: center;
+		border-radius: 0.3rem;
+		text-decoration: none;
+		position: relative;
+		transition: color 0.2s;
+		overflow: hidden;
+		box-shadow: 0px 4px 0px #897558;
+
+		p {
+			margin-block-start: 0.5em;
+		}
+
+		a {
+			display: block;
+			margin-block-start: 0.2em;
+			color: inherit;
+		}
+
+		.card-content {
+			display: flex;
+			color: var(--col-text-white);
+			flex-direction: column;
+			justify-content: end;
+			background: linear-gradient(hsla(0, 0%, 0%, 0.3), hsl(0deg 0% 0% / 31%) 75%);
+			mix-blend-mode: darken;
+			padding: 1em;
+			padding-bottom: 0.2em;
+			min-height: 15em;
+			height: 100%;
+			box-sizing: border-box;
+			transition: opacity 0.2s;
+
+			&.dark {
+				mix-blend-mode: hard-light;
+			}
+		}
+
+		&:hover {
+			color: transparent;
+			.card-content {
+				opacity: 0;
+			}
+		}
+	}
+
+	.card-title {
+		font-size: 3rem;
+		font-weight: bolder;
+		text-decoration: underline;
 	}
 
 	.wave {
