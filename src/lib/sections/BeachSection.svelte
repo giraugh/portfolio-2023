@@ -11,30 +11,33 @@
 		<div class="wave" />
 	</div>
 	<div class="sand">
-		<!-- STUFF HERE -->
-		<div class="crab-wrapper">
-			<img class="crab" src={crabImage} alt="A cute cartoon crab" />
+		<div class="content">
+			<div class="crab-wrapper">
+				<img class="crab" src={crabImage} alt="A cute cartoon crab" />
+				<!-- <p class="speech-bubble">Check out these cool projects from my friends!</p> -->
+			</div>
+			<ul class="project-list content">
+				{#each projects as project}
+					<li>
+						<a
+							class="project-card"
+							href={project.link}
+							style:background-image={`url(${makeImageLink(project.imageID)})`}
+						>
+							<div class="card-content" class:dark={project.dark}>
+								<span class="card-title">{project.name}</span>
+								<p>
+									{project.description}
+									<a class="card-author" href={project.authorLink} target="_blank"
+										>{project.author}</a
+									>
+								</p>
+							</div>
+						</a>
+					</li>
+				{/each}
+			</ul>
 		</div>
-		<ul class="project-list content">
-			{#each projects as project}
-				<li>
-					<a
-						class="project-card"
-						href={project.link}
-						style:background-image={`url(${makeImageLink(project.imageID)})`}
-					>
-						<div class="card-content" class:dark={project.dark}>
-							<span class="card-title">{project.name}</span>
-							<p>
-								{project.description}
-								<a class="card-author" href={project.authorLink} target="_blank">{project.author}</a
-								>
-							</p>
-						</div>
-					</a>
-				</li>
-			{/each}
-		</ul>
 	</div>
 </section>
 
@@ -49,6 +52,10 @@
 		&:has(.beach-waves) {
 			padding-block-end: 0;
 		}
+	}
+
+	.content {
+		margin: auto;
 	}
 
 	.beach-waves {
@@ -71,6 +78,20 @@
 			}
 		}
 	}
+
+	/* .speech-bubble {
+		display: block;
+		position: absolute;
+		left: calc(40%);
+		top: -7em;
+		width: 15em;
+		background: var(--col-text-white);
+		padding: 2em;
+		border-radius: 1rem;
+		border: 4px solid var(--col-text-black);
+		font-weight: bold;
+		font-size: 1.2rem;
+	} */
 
 	.sand {
 		min-height: 20em;
