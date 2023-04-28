@@ -5,14 +5,58 @@
 	let focusedImage: null | GalleryImage = null
 	let dialog: HTMLDialogElement
 
-	const focusImage = (image: GalleryImage) => {
+	const focusImage = (image: GalleryImage, event: MouseEvent) => {
+		// Update focused image
 		focusedImage = image
-		dialog.showModal()
+
+		// fallback if view transitions not available
+		if (!document.startViewTransition) {
+			dialog.showModal()
+			return
+		}
+
+		// Set transition name on image
+		const sourceImage = (event.currentTarget as HTMLElement).querySelector('img')!
+		sourceImage.style.viewTransitionName = 'zoom-in'
+
+		// Start transition
+		document.startViewTransition(() => {
+			// Show modal
+			dialog.showModal()
+
+			// Move transition name to dialog image
+			sourceImage.style.viewTransitionName = ''
+			const modalImage = document.querySelector<HTMLElement>('dialog img')!
+			modalImage.style.viewTransitionName = 'zoom-in'
+		})
 	}
 
 	const unfocusImage = () => {
-		focusedImage = null
-		dialog.close()
+		// Fallback if view transition not supported
+		if (!document.startViewTransition) {
+			focusedImage = null
+			dialog.close()
+			return
+		}
+
+		// Fetch and prepare actors
+		const dialogImage = document.querySelector<HTMLElement>('dialog img')!
+		const sourceImage = document.querySelector<HTMLElement>(`img#gal-${focusedImage!.imageId}`)!
+		dialogImage.style.viewTransitionName = 'zoom-out'
+
+		// Start transition
+		const transition = document.startViewTransition(() => {
+			dialog.close()
+			sourceImage.style.viewTransitionName = 'zoom-out'
+
+			// Unfocus the image
+			focusedImage = null
+		})
+
+		// Cleanup after transition
+		transition.finished.then(() => {
+			sourceImage.style.viewTransitionName = ''
+		})
 	}
 </script>
 
@@ -29,8 +73,13 @@
 			<ul class:grid={area.showAsGrid}>
 				{#each area.images as image}
 					<li class:square={image.isSquare}>
-						<button on:click={() => focusImage(image)}>
-							<img src={makeImageLink(image.imageId)} alt={image.name} title={image.name} />
+						<button on:click={(e) => focusImage(image, e)}>
+							<img
+								id={`gal-${image.imageId}`}
+								src={makeImageLink(image.imageId)}
+								alt={image.name}
+								title={image.name}
+							/>
 						</button>
 					</li>
 				{/each}
