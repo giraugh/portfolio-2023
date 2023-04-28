@@ -1,7 +1,7 @@
 <script lang="ts">
 	import crabImage from '$lib/images/crab.png'
 	import projects from '$lib/data/friendsProjects'
-	import { makeImageLink } from '$lib/data/projects'
+	import ProjectCard from '$lib/components/ProjectCard.svelte'
 </script>
 
 <section class="primary">
@@ -12,28 +12,16 @@
 	</div>
 	<div class="sand">
 		<div class="content">
-			<div class="crab-wrapper">
-				<img class="crab" src={crabImage} alt="A cute cartoon crab" />
-				<!-- <p class="speech-bubble">Check out these cool projects from my friends!</p> -->
+			<div class="top-row">
+				<div class="crab-wrapper">
+					<img class="crab" src={crabImage} alt="A cute cartoon crab" />
+				</div>
+				<p class="speech-bubble">Also check out these cool projects from my friends!</p>
 			</div>
 			<ul class="project-list content">
 				{#each projects as project}
 					<li>
-						<a
-							class="project-card"
-							href={project.link}
-							style:background-image={`url(${makeImageLink(project.imageID)})`}
-						>
-							<div class="card-content" class:dark={project.dark}>
-								<span class="card-title">{project.name}</span>
-								<p>
-									{project.description}
-									<a class="card-author" href={project.authorLink} target="_blank"
-										>{project.author}</a
-									>
-								</p>
-							</div>
-						</a>
+						<ProjectCard {project} sand />
 					</li>
 				{/each}
 			</ul>
@@ -79,25 +67,11 @@
 		}
 	}
 
-	/* .speech-bubble {
-		display: block;
-		position: absolute;
-		left: calc(40%);
-		top: -7em;
-		width: 15em;
-		background: var(--col-text-white);
-		padding: 2em;
-		border-radius: 1rem;
-		border: 4px solid var(--col-text-black);
-		font-weight: bold;
-		font-size: 1.2rem;
-	} */
-
 	.sand {
 		min-height: 20em;
 		width: 100%;
 		margin-block-start: 14em;
-		padding-block-end: 20em;
+		padding-block-end: 15em;
 
 		background: var(--col-surface-sand);
 
@@ -117,21 +91,47 @@
 		}
 	}
 
+	.top-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 3em;
+		padding-inline: 5em;
+		margin-block-start: -7em;
+
+		@media (max-width: 900px) {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+
+		@media (max-width: 500px) {
+			grid-template-columns: 1fr;
+			text-align: center;
+			padding-inline: 0em;
+		}
+	}
+
+	.speech-bubble {
+		display: block;
+		padding-inline: 2em;
+		font-weight: bold;
+		font-size: 1.5rem;
+		transform: perspective(20em) rotateX(40deg);
+		color: #835a2c;
+		font-family: 'Jost';
+		align-self: flex-end;
+		margin-block-end: 0.3em;
+	}
+
 	.crab-wrapper {
-		width: 100%;
-		height: 25em;
-		position: absolute;
+		position: relative;
 
 		img {
+			position: relative;
 			display: block;
-			position: absolute;
-			left: 3%;
-			top: -6em;
 			width: 20em;
 		}
 
 		&::before {
-			/* A shadow for the sand */
 			display: block;
 			content: '';
 			position: absolute;
@@ -140,13 +140,13 @@
 			border-radius: 50%;
 			width: 18em;
 			height: 3em;
-			top: 2.5em;
-			left: 3em;
+			bottom: 0.4em;
+			left: 1em;
 		}
 	}
 
 	.project-list {
-		padding-block-start: 10em;
+		padding-block-start: 5em;
 		padding-inline: 0;
 		list-style-type: none;
 		width: 100%;
@@ -156,61 +156,6 @@
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		width: 100%;
 		gap: 1em;
-	}
-
-	.project-card {
-		display: block;
-		/* background-color: purple; */
-		background-size: cover;
-		background-position: center;
-		border-radius: 0.3rem;
-		text-decoration: none;
-		position: relative;
-		transition: color 0.2s;
-		overflow: hidden;
-		box-shadow: 0px 4px 0px #897558;
-
-		p {
-			margin-block-start: 0.5em;
-		}
-
-		a {
-			display: block;
-			margin-block-start: 0.2em;
-			color: inherit;
-		}
-
-		.card-content {
-			display: flex;
-			color: var(--col-text-white);
-			flex-direction: column;
-			justify-content: end;
-			background: linear-gradient(hsla(0, 0%, 0%, 0.3), hsl(0deg 0% 0% / 31%) 75%);
-			mix-blend-mode: darken;
-			padding: 1em;
-			padding-bottom: 0.2em;
-			min-height: 15em;
-			height: 100%;
-			box-sizing: border-box;
-			transition: opacity 0.2s;
-
-			&.dark {
-				mix-blend-mode: hard-light;
-			}
-		}
-
-		&:hover {
-			color: transparent;
-			.card-content {
-				opacity: 0;
-			}
-		}
-	}
-
-	.card-title {
-		font-size: 3rem;
-		font-weight: bolder;
-		text-decoration: underline;
 	}
 
 	.wave {

@@ -9,7 +9,7 @@ export default [
   {
     name: 'Crab.Fit',
     description: 'Find a time to meet with friends',
-    imageID: '4b15df30-85c7-429e-d062-bf1d19f0fd00',
+    imageID: 'd84213f9-0f86-4fdb-dbd4-a6104d779600',
     link: 'https://crab.fit',
     author: 'Benji Grant',
     authorLink: '',

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ProjectCard from '$lib/components/ProjectCard.svelte'
 	import SimpleSection from '$lib/components/SimpleSection.svelte'
 	import Spikes from '$lib/components/Spikes.svelte'
 	import projects, { makeImageLink } from '$lib/data/projects'
@@ -46,16 +47,7 @@
 	<ul class="project-list content">
 		{#each projects as project}
 			<li transition:fly={{ duration: 200 }}>
-				<a
-					class="project-card"
-					href={project.link}
-					style:background-image={`url(${makeImageLink(project.imageID)})`}
-				>
-					<div class="card-content" class:dark={project.dark}>
-						<span class="card-title">{project.name}</span>
-						<p>{project.description}</p>
-					</div>
-				</a>
+				<ProjectCard {project} />
 			</li>
 		{/each}
 	</ul>
@@ -96,54 +88,6 @@
 
 	.spike-container {
 		transform: translateY(calc(var(--oy) * 1px));
-	}
-
-	.project-card {
-		display: block;
-		background-color: purple;
-		background-size: cover;
-		background-position: center;
-		border-radius: 0.3rem;
-		text-decoration: none;
-		position: relative;
-		transition: color 0.2s;
-		overflow: hidden;
-
-		p {
-			margin-block-start: 0.5em;
-		}
-
-		.card-content {
-			display: flex;
-			color: var(--col-text-white);
-			flex-direction: column;
-			justify-content: end;
-			background: linear-gradient(hsl(0deg 0% 0% / 30%), hsl(0deg 0% 0% / 80%) 75%);
-			mix-blend-mode: darken;
-			padding: 1em;
-			padding-bottom: 0.2em;
-			min-height: 15em;
-			height: 100%;
-			box-sizing: border-box;
-			transition: opacity 0.2s;
-
-			&.dark {
-				mix-blend-mode: hard-light;
-			}
-		}
-
-		&:hover {
-			color: transparent;
-			.card-content {
-				opacity: 0;
-			}
-		}
-	}
-
-	.card-title {
-		font-size: 3rem;
-		font-weight: bolder;
-		text-decoration: underline;
 	}
 
 	[slot='description'] {

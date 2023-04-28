@@ -11,7 +11,7 @@
 				A showcase of my design and illustration work for various university communities, discord
 				servers and personal projects. Primarily featuring vector and pixel art pieces.
 			</p>
-			<a class="button" href="gallery"><Paintbrush /> Open Gallery</a>
+			<a class="button" href="/gallery" data-sveltekit-noscroll><Paintbrush /> Open Gallery</a>
 		</div>
 		<img slot="image" src={snakeImage} alt="Colourful snake with headphones around its 'neck'" />
 	</SimpleSection>
