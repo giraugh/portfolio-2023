@@ -23,7 +23,7 @@
 		</div>
 		<img
 			slot="image"
-			src="https://cdn.giraugh.xyz/compressed/stevent-screenshot.webp"
+			src="https://imagedelivery.net/zthi1l8fKrUGB5ig08mq-Q/03f43451-63d1-4e4e-60ac-86e1a85d5b00/public"
 			alt="Screenshot of the stevent software"
 		/>
 	</BigProjectSection>

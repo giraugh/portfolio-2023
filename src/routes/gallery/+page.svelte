@@ -1,6 +1,7 @@
 <script lang="ts">
 	import galleryAreas, { type GalleryImage } from '$lib/data/gallery'
 	import { makeImageLink } from '$lib/data/projects'
+	import { ArrowLeft } from 'lucide-svelte'
 
 	let focusedImage: null | GalleryImage = null
 	let dialog: HTMLDialogElement
@@ -60,15 +61,20 @@
 	}
 </script>
 
+<header>
+	<div>
+		<a class="back-link" href="/"><ArrowLeft />back</a>
+		<h1>Gallery</h1>
+		<p>
+			A showcase of my design and illustration work for various university communities, discord
+			servers and personal projects. Primarily features vector and pixel art pieces.
+		</p>
+	</div>
+</header>
 <div class="gallery">
-	<h1>Gallery</h1>
-	<p>
-		A showcase of my design and illustration work for various university communities, discord
-		servers and personal projects. Primarily features vector and pixel art pieces.
-	</p>
 	{#each galleryAreas as area}
 		<section>
-			<h3>{area.name}</h3>
+			<h2>{area.name}</h2>
 			<p>{area.description}</p>
 			<ul class:grid={area.showAsGrid}>
 				{#each area.images as image}
@@ -100,9 +106,49 @@
 	</dialog>
 </div>
 
+<svelte:head>
+	<title>Ewan Breakey ▶ Gallery</title>
+</svelte:head>
+
 <style lang="scss">
+	:global(html),
+	:global(body) {
+		background: var(--col-surface-blue-dd);
+		color: var(--col-text-white);
+	}
+
 	.gallery {
 		padding: 2em;
+		padding-block-start: 0;
+	}
+
+	header {
+		color: var(--col-surface-blue-dd);
+		position: relative;
+		border-bottom: 5px dashed var(--col-text-white);
+
+		&::before {
+			display: block;
+			position: absolute;
+			inset: 0;
+			content: '';
+			background-color: #e5e5f7;
+			background-image: radial-gradient(var(--col-surface-blue-d) 25px, transparent 25px),
+				radial-gradient(var(--col-surface-blue-d) 25px, var(--col-surface-white) 25px);
+			background-size: 120px 120px;
+			background-position: 0 0, 60px 60px;
+		}
+
+		div {
+			padding: 2em;
+			background: linear-gradient(70deg, rgba(255, 255, 255, 0.97) 40%, transparent);
+			position: relative;
+			z-index: 1;
+
+			@media (max-width: 500px) {
+				background: linear-gradient(25deg, rgba(255, 255, 255, 0.92) 55%, transparent);
+			}
+		}
 	}
 
 	dialog {
@@ -126,6 +172,37 @@
 		strong {
 			color: white;
 			font-size: 2rem;
+		}
+	}
+
+	.back-link {
+		display: flex;
+		align-items: center;
+		gap: 0.3em;
+		color: inherit;
+		opacity: 0.75;
+		font-size: 0.9rem;
+		margin-block-end: 0.75em;
+
+		&:not(:hover) {
+			text-decoration: none;
+		}
+	}
+
+	h1 {
+		font-size: 2.4rem;
+		margin-block-end: 0;
+
+		& + p {
+			max-width: 38em;
+		}
+	}
+
+	h2 {
+		margin-block-end: 0;
+
+		& + p {
+			margin-block-start: 0.5em;
 		}
 	}
 

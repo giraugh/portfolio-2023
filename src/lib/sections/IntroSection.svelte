@@ -6,7 +6,7 @@
 </script>
 
 <section class="primary">
-	<div class="art" />
+	<div class="art">hi</div>
 	<div class="content">
 		<h1>Ewan Breakey</h1>
 		<p>
@@ -33,7 +33,7 @@
 	}
 
 	h1 {
-		font-size: 2.8em;
+		font-size: 3em;
 		margin-block-end: 0.3em;
 	}
 

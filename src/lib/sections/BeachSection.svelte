@@ -129,6 +129,8 @@
 			position: relative;
 			display: block;
 			width: 20em;
+
+			animation: occasional-jump 15s linear infinite;
 		}
 
 		&::before {
@@ -164,9 +166,51 @@
 			radial-gradient(111.8px at 50% -100px, #0000 99%, #000 101%) 50% 50px/200px 100% repeat-x;
 		-webkit-mask: var(--mask);
 		mask: var(--mask);
+		animation: wave-bob 3s infinite;
+		--bob-amount: 7px;
+
+		&:nth-child(1) {
+			animation-delay: -0.8s;
+		}
+		&:nth-child(2) {
+			animation-delay: -1.2s;
+		}
 	}
 
 	.primary {
 		overflow-x: hidden;
+	}
+
+	@keyframes wave-bob {
+		0% {
+			transform: scaleY(1.2) scaleX(1) translate(0, 0);
+		}
+		50% {
+			transform: scaleY(1.2) scaleX(1.02) translate(0, var(--bob-amount));
+		}
+		100% {
+			transform: scaleY(1.2) scaleX(1) translate(0, 0);
+		}
+	}
+
+	@keyframes occasional-jump {
+		1% {
+			transform: translateY(0) scaleX(1);
+		}
+		49% {
+			transform: translateY(0) scaleX(1);
+		}
+		50% {
+			transform: translateY(-0.5em);
+		}
+		51% {
+			transform: translateY(0) scaleX(-1);
+		}
+		99% {
+			transform: translateY(0) scaleX(-1);
+		}
+		100% {
+			transform: translateY(-0.5em);
+		}
 	}
 </style>
