@@ -59,7 +59,7 @@
 		.grain {
 			position: absolute;
 			inset: 0;
-			opacity: 0.4;
+			opacity: 0.2;
 			background-size: 700px;
 		}
 
