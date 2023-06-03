@@ -26,7 +26,7 @@
 	})
 </script>
 
-<section class="primary">
+<section>
 	<BigProjectSection swap>
 		<h2 slot="title">Solar and Sundry</h2>
 		<div slot="description">

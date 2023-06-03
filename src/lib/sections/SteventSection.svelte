@@ -3,7 +3,7 @@
 	import steventBannerImage from '$lib/images/stevent-banner.svg'
 </script>
 
-<section class="primary">
+<section>
 	<BigProjectSection>
 		<img slot="title" src={steventBannerImage} alt="Stevent logo and wordmark" />
 		<div slot="description">

@@ -1,13 +1,20 @@
 <script lang="ts">
-	import { Github, Linkedin, Download } from 'lucide-svelte'
-	import bannerImage from '$lib/images/garden-scene.jpg'
-	import grainTexture from '$lib/images/grain.svg'
+	import { Github, Linkedin } from 'lucide-svelte'
+	import Bubble from '$lib/components/Bubble.svelte'
+	import { range } from '@giraugh/tools'
 
 	const GITHUB_LINK = 'https://github.com/giraugh'
 	const LINKEDIN_LINK = 'https://www.linkedin.com/in/ewan-breakey-8294241a9/'
 </script>
 
-<section class="primary">
+<section>
+	<div class="art">
+		<div class="bubble-container">
+			{#each range(0, 10) as num}
+				<Bubble />
+			{/each}
+		</div>
+	</div>
 	<div class="content">
 		<h1>Ewan Breakey</h1>
 		<p>
@@ -18,10 +25,6 @@
 			<a target="_blank" href={GITHUB_LINK} class="button"><Github />Github</a>
 			<a target="_blank" href={LINKEDIN_LINK} class="button"><Linkedin />LinkedIn</a>
 		</div>
-	</div>
-	<div class="art">
-		<img src={bannerImage} alt="" />
-		<div class="grain" style:background-image={`url(${grainTexture})`} />
 	</div>
 </section>
 
@@ -34,19 +37,29 @@
 		min-height: 20em;
 		overflow: hidden;
 		position: relative;
-		padding-block-start: 15em;
+		padding-block-start: 12em;
+		padding-block-end: 5em;
 	}
 
 	.content {
+		position: relative;
 		padding: 2em;
 		width: 100%;
+		box-sizing: border-box;
+
+		/* Let non-content pointer events fall through */
+		pointer-events: none;
+		a[href] {
+			pointer-events: all;
+		}
+
 		p {
 			max-width: 40em;
 		}
 	}
 
 	h1 {
-		font-size: 3em;
+		font-size: 4em;
 		margin-block-end: 0.3em;
 	}
 
@@ -54,23 +67,13 @@
 		width: 100%;
 		position: absolute;
 		inset: 0;
-		z-index: -1;
+		pointer-events: none;
 
-		.grain {
-			position: absolute;
-			inset: 0;
-			opacity: 0.2;
-			background-size: 700px;
-		}
+		background: linear-gradient(180deg, var(--col-surface-blue-d), var(--col-surface-blue-dd));
+	}
 
-		img {
-			display: block;
-			object-position: center right;
-			object-fit: cover;
-			width: 100%;
-			transform: scale(1.3);
-			filter: blur(0.5em) brightness(0.8);
-		}
+	.bubble-container {
+		pointer-events: all;
 	}
 
 	.buttons {
@@ -79,7 +82,7 @@
 		gap: 0.5em;
 
 		.button {
-			background: var(--col-surface-green);
+			background: var(--col-surface-blue);
 
 			@media (max-width: $bp-mobile) {
 				flex: 1;

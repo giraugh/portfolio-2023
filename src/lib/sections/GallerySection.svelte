@@ -4,7 +4,7 @@
 	import snakeImage from '$lib/images/snake.svg'
 </script>
 
-<section class="primary bg-image">
+<section class="bg-image">
 	<SimpleSection title="Design Gallery">
 		<div slot="description">
 			<p>

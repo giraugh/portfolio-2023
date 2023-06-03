@@ -4,7 +4,7 @@
 	import ProjectCard from '$lib/components/ProjectCard.svelte'
 </script>
 
-<section class="primary">
+<section>
 	<div class="beach-waves">
 		<div class="wave" />
 		<div class="wave" />
@@ -177,7 +177,7 @@
 		}
 	}
 
-	.primary {
+	section {
 		overflow-x: hidden;
 	}
 

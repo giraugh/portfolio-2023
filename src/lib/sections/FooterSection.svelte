@@ -2,7 +2,7 @@
 	import SimpleSection from '$lib/components/SimpleSection.svelte'
 </script>
 
-<section class="primary bg-image">
+<section class="bg-image">
 	<SimpleSection title="Thanks for Stopping By!" thin>
 		<div slot="description">
 			<p>

@@ -4,7 +4,7 @@
 	import automatariumScreenshotImage from '$lib/images/automatarium-graph.svg' // TODO: cdn
 </script>
 
-<section class="primary">
+<section>
 	<BigProjectSection>
 		<img slot="title" src={automatariumBannerImage} alt="Automatarium logo and wordmark" />
 		<div slot="description">

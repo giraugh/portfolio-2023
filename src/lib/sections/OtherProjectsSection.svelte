@@ -8,7 +8,7 @@
 	let scroll: number = 0
 </script>
 
-<section class="primary">
+<section>
 	<div class="spikes-container">
 		<div class="spike-container bottom" style:--oy={(scroll - 500) / 10}>
 			<Spikes

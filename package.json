@@ -30,6 +30,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@giraugh/tools": "^1.6.0",
+		"@giraugh/vector": "^0.1.1",
 		"@total-typescript/ts-reset": "^0.4.2",
 		"dayjs": "^1.11.7",
 		"lucide-svelte": "^0.127.0",
