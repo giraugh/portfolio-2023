@@ -26,7 +26,7 @@
 		</div>
 	</div>
 	<div class="content">
-		<h1>Hi! I'm Ewan</h1>
+		<h1><span>Hi! </span><span>I'm Ewan</span></h1>
 		<p>
 			A web developer based in Melbourne, Australia. Keep scrolling to view my webdev, illustration
 			and game dev work!
@@ -49,6 +49,11 @@
 		position: relative;
 		padding-block-start: 12em;
 		padding-block-end: 5em;
+
+		@media (max-width: $bp-mobile) {
+			padding-block-start: 0em;
+			padding-block-end: 12em;
+		}
 	}
 
 	.content {
@@ -71,6 +76,12 @@
 	h1 {
 		font-size: 4em;
 		margin-block-end: 0.3em;
+
+		@media (max-width: $bp-mobile) {
+			display: flex;
+			flex-direction: column;
+			line-height: 1.1;
+		}
 	}
 
 	.art {
