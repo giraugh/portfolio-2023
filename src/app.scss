@@ -7,6 +7,7 @@
   --col-surface-blue: #4088CA;
   --col-surface-blue-d: #3464b1;
   --col-surface-blue-dd: #124372;
+  --col-surface-blue-ddd: #0d305f;
   --col-text-white: #eee;
   --col-text-black: #2A2A2A;
   --rad-button: .2rem;
@@ -87,7 +88,7 @@ button, a.button {
   font-family: var(--fnt-heading);
 }
 
-section {
+main > section {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Github, Linkedin } from 'lucide-svelte'
 	import Bubble from '$lib/components/Bubble.svelte'
+	import Spikes from '$lib/components/Spikes.svelte'
 	import { range } from '@giraugh/tools'
 
 	const GITHUB_LINK = 'https://github.com/giraugh'
@@ -9,6 +10,15 @@
 
 <section>
 	<div class="art">
+		<div class="spike-container">
+			<Spikes
+				simplexFreq={0.5}
+				spikeResolution={1500 / 150}
+				spikeHeight={200}
+				spikeBaseHeight={0}
+				fill="var(--col-surface-blue-ddd)"
+			/>
+		</div>
 		<div class="bubble-container">
 			{#each range(0, 10) as num}
 				<Bubble />
@@ -16,10 +26,10 @@
 		</div>
 	</div>
 	<div class="content">
-		<h1>Ewan Breakey</h1>
+		<h1>Hi! I'm Ewan</h1>
 		<p>
-			Hi there! I&apos;m a software engineer and web designer from Melbourne, Australia. I love to
-			collaborate on creative projects, promote accessibility and hone my skills.
+			A web developer based in Melbourne, Australia. Keep scrolling to view my webdev, illustration
+			and game dev work!
 		</p>
 		<div class="buttons">
 			<a target="_blank" href={GITHUB_LINK} class="button"><Github />Github</a>
@@ -74,6 +84,26 @@
 
 	.bubble-container {
 		pointer-events: all;
+	}
+
+	.spike-container {
+		position: absolute;
+		bottom: 100%;
+		width: 100%;
+		height: 200px;
+		bottom: 0;
+		scale: 1 -1;
+		translate: 0 30px;
+		filter: blur(3px);
+		opacity: 0.3;
+
+		animation: fade-in 2s forwards;
+	}
+
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+		}
 	}
 
 	.buttons {

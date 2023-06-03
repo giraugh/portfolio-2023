@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BigProjectSection from '$lib/components/BigProjectSection.svelte'
 	import steventBannerImage from '$lib/images/stevent-banner.svg'
+	import { Compass } from 'lucide-svelte'
 </script>
 
 <section>
@@ -20,6 +21,7 @@
 				<a target="_blank" href="/">ayecal</a> and
 				<a target="_blank" href="/">totp</a>!
 			</p>
+			<a class="button" target="_blank" href="https://stevent.club"><Compass /> Find out more</a>
 		</div>
 		<img
 			slot="image"
@@ -53,6 +55,11 @@
 			text-decoration: none;
 			color: var(--col-stevent-brand);
 		}
+	}
+
+	.button {
+		background: var(--col-stevent-brand);
+		color: white;
 	}
 
 	[slot='image'] {

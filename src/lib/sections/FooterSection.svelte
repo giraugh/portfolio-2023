@@ -6,20 +6,21 @@
 	<SimpleSection title="Thanks for Stopping By!" thin>
 		<div slot="description">
 			<p>
+				Wanna get in touch? <a href="mailto:contact@ewanb.me">Chuck me an email,</a> I'd love to hear
+				from you.
+			</p>
+			<em>
 				This site was created in Sveltekit and is <a
 					href="https://github.com/giraugh/portfolio-2023">open-source</a
-				>. Feel free to submit an issue if you find any issues!
-			</p>
-			<p>
-				<em>This site is licensed under Creative Commons BY-NC-SA 4.0.</em>
-			</p>
+				>.
+			</em>
 		</div>
 	</SimpleSection>
 </section>
 
 <style lang="scss">
 	section {
-		background: var(--grad-gallery);
+		background: var(--col-surface-blue-dd);
 		color: var(--col-text-white);
 	}
 
