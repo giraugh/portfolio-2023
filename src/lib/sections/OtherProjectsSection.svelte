@@ -10,7 +10,7 @@
 
 <section>
 	<div class="spikes-container">
-		<div class="spike-container bottom" style:--oy={(scroll - 500) / 10}>
+		<div class="spike-container bottom" style:--oy={(-scroll + 1500) / 25}>
 			<Spikes
 				simplexFreq={0.5}
 				spikeResolution={1500 / 90}
@@ -19,7 +19,7 @@
 				fill="var(--col-surface-purple-ddd)"
 			/>
 		</div>
-		<div class="spike-container mid" style:--oy={(scroll - 2000) / 8}>
+		<div class="spike-container mid" style:--oy={(-scroll + 2000) / 20}>
 			<Spikes
 				spikeResolution={1500 / 70}
 				spikeHeight={400}
