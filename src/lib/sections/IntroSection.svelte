@@ -28,8 +28,8 @@
 	<div class="content">
 		<h1><span>Hi! </span><span>I'm Ewan</span></h1>
 		<p>
-			A web developer based in Melbourne, Australia. Keep scrolling to view my webdev, illustration
-			and game dev work!
+			A web developer based in Melbourne, Australia. <br />Keep scrolling to view my webdev,
+			illustration and game dev work!
 		</p>
 		<div class="buttons">
 			<a target="_blank" href={GITHUB_LINK} class="button"><Github />Github</a>
