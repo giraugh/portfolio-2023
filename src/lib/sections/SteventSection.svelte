@@ -2,6 +2,10 @@
 	import BigProjectSection from '$lib/components/BigProjectSection.svelte'
 	import steventBannerImage from '$lib/images/stevent-banner.svg'
 	import { Compass } from 'lucide-svelte'
+
+	const EPOXY_LINK = 'https://github.com/stevent-team/epoxy'
+	const AYECAL_LINK = 'https://github.com/stevent-team/ayecal'
+	const TOTP_LINK = 'https://github.com/stevent-team/totp'
 </script>
 
 <section>
@@ -17,9 +21,9 @@
 			<p class="info">
 				We also have a collection of open source satellite projects. If you're a web developer,
 				check out our projects
-				<a target="_blank" href="/">epoxy</a>,
-				<a target="_blank" href="/">ayecal</a> and
-				<a target="_blank" href="/">totp</a>!
+				<a target="_blank" href={EPOXY_LINK}>epoxy</a>,
+				<a target="_blank" href={AYECAL_LINK}>ayecal</a> and
+				<a target="_blank" href={TOTP_LINK}>totp</a>!
 			</p>
 			<a class="button" target="_blank" href="https://stevent.club"><Compass /> Find out more</a>
 		</div>

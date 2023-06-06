@@ -2,6 +2,7 @@
 	import BigProjectSection from '$lib/components/BigProjectSection.svelte'
 	import automatariumBannerImage from '$lib/images/automatarium-banner.svg'
 	import automatariumScreenshotImage from '$lib/images/automatarium-graph.svg' // TODO: cdn
+	import { ArrowUpRight } from 'lucide-svelte'
 </script>
 
 <section>
@@ -17,6 +18,9 @@
 				Originally created as part of a group <b>capstone project</b> at RMIT, Automatarium is now
 				<b>open-source</b> and accepting contributions.
 			</p>
+			<a class="button" target="_blank" href="https://stevent.club"
+				><ArrowUpRight /> Give it a go!</a
+			>
 		</div>
 		<img slot="image" src={automatariumScreenshotImage} alt="Screenshot of the stevent software" />
 	</BigProjectSection>
@@ -29,6 +33,12 @@
 		background: var(--grad-automatarium-dot-grid);
 		background-size: 40px 40px;
 		color: var(--col-text-black);
+	}
+
+	.button {
+		background: var(--col-automatarium-brand);
+		color: white;
+		margin-block-end: 1em;
 	}
 
 	b {

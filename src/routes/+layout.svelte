@@ -11,11 +11,6 @@
 <style lang="scss">
 	.wrapper {
 		width: 100%;
-		display: flex;
 		justify-content: center;
-	}
-
-	main {
-		width: min(100vw, 100em);
 	}
 </style>
