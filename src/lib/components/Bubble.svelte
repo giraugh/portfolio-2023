@@ -8,7 +8,7 @@
 		const containerBB = buttonContainer.getBoundingClientRect()
 		const x = Math.random() * containerBB.width
 		buttonElement.style.left = `${x}px`
-		buttonElement.style.setProperty('--bubble-size', `${40 + Math.random() * 50}px`)
+		buttonElement.style.setProperty('--bubble-size', `${30 + Math.random() * 40}px`)
 		buttonElement.style.setProperty('--wiggle-amt', `${8 + Math.random() * 5}px`)
 	}
 

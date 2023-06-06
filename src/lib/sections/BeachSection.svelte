@@ -166,6 +166,8 @@
 			radial-gradient(111.8px at 50% -100px, #0000 99%, #000 101%) 50% 50px/200px 100% repeat-x;
 		-webkit-mask: var(--mask);
 		mask: var(--mask);
+		mask: var(--mask);
+		mask: var(--mask);
 		animation: wave-bob 3s infinite;
 		--bob-amount: 7px;
 

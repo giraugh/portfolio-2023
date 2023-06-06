@@ -51,8 +51,8 @@
 		padding-block-end: 5em;
 
 		@media (max-width: $bp-mobile) {
-			padding-block-start: 0em;
-			padding-block-end: 12em;
+			padding-block-start: 6em;
+			padding-block-end: 8em;
 		}
 	}
 
@@ -108,7 +108,7 @@
 		filter: blur(3px);
 		opacity: 0.3;
 
-		animation: fade-in 2s forwards;
+		animation: fade-in 4s forwards;
 	}
 
 	@keyframes fade-in {
