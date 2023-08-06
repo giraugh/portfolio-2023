@@ -58,7 +58,7 @@ export default [
   },
   {
     name: 'Ant',
-    description: 'Simple langton\'s ant simulation',
+    description: 'Simple Langton\'s ant simulation',
     imageID: '54e55f2a-107f-4848-4f87-77f4a64b5300',
     link: 'https://giraugh.xyz/ant',
     dark: true,
